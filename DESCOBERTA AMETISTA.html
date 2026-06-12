@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Descoberta da Ametista 💜</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Segoe UI',sans-serif;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+
+background:
+linear-gradient(
+rgba(25,10,45,.65),
+rgba(25,10,45,.65)
+),
+url('ametista.jpg');
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+.card{
+background:rgba(255,255,255,.95);
+width:100%;
+max-width:850px;
+padding:40px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+}
+
+h1{
+color:#6d28d9;
+margin-bottom:20px;
+}
+
+p{
+font-size:1.1rem;
+line-height:1.8;
+color:#333;
+}
+
+button{
+border:none;
+padding:14px 28px;
+margin:10px;
+border-radius:12px;
+cursor:pointer;
+font-size:1rem;
+transition:.2s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.sim{
+background:#7c3aed;
+color:white;
+}
+
+.nao{
+background:#e5e5e5;
+}
+
+.hidden{
+display:none;
+}
+
+ul{
+text-align:left;
+max-width:500px;
+margin:20px auto;
+line-height:2;
+}
+
+#mensagem{
+margin-top:20px;
+color:#6d28d9;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div id="tela1">
+
+<h1>📖 Relatório de Campo nº 01</h1>
+
+<p>
+Durante uma expedição geológica de rotina, uma jovem exploradora chamada Emily encontrou algo incomum.
+</p>
+
+<br>
+
+<p>
+Entre camadas de rocha aparentemente comuns, foi identificada uma formação rara de ametista.
+</p>
+
+<br>
+
+<p>
+Quanto mais Emily observava a amostra, mais percebia que ela era diferente de todas as outras.
+</p>
+
+<br>
+
+<p>
+Deseja que Emily continue a exploração?
+</p>
+
+<br>
+
+<button class="sim" onclick="abrirTela2()">
+Sim ❤️
+</button>
+
+<button class="nao" onclick="erroTela1()">
+Não ❌
+</button>
+
+<div id="erro1"></div>
+
+</div>
+
+<div id="tela2" class="hidden">
+
+<h1>💜 Análise Mineralógica</h1>
+
+<p>
+Conforme os estudos avançavam, Emily descobriu que aquela ametista possuía características extremamente raras.
+</p>
+
+<br>
+
+<p>
+Além de sua beleza, carregava qualidades associadas à sinceridade, à tranquilidade e à autenticidade.
+</p>
+
+<br>
+
+<p>
+Nenhuma outra amostra encontrada até então parecia se comparar a ela.
+</p>
+
+<br>
+
+<p>
+Os resultados preliminares indicavam uma raridade estatisticamente improvável.
+</p>
+
+<br>
+
+<p>
+Deseja prosseguir com a análise?
+</p>
+
+<br>
+
+<button class="sim" onclick="abrirTela3()">
+Sim ❤️
+</button>
+
+<button class="nao" id="fugitivo">
+Não ❌
+</button>
+
+</div>
+
+<div id="tela3" class="hidden">
+
+<h1>📋 Conclusão da Pesquisa</h1>
+
+<p>
+Após meses de pesquisa, Emily chegou à seguinte conclusão:
+</p>
+
+<br>
+
+<p>
+A ametista encontrada não era apenas rara.
+</p>
+
+<br>
+
+<p>
+Era insubstituível.
+</p>
+
+<br>
+
+<p>
+Diante disso, decidiu dedicar parte das suas próximas 8765,81 horas anuais ao estudo contínuo dessa descoberta.
+</p>
+
+<ul>
+<li>Conversas;</li>
+<li>Encontros;</li>
+<li>Risadas;</li>
+<li>Filmes favoritos;</li>
+<li>Ouvir Arctic Monkeys;</li>
+<li>Gostar da ametista (atividade de extrema importância científica).</li>
+</ul>
+
+<button class="sim" onclick="abrirTelaFinal()">
+Continuar ❤️
+</button>
+
+</div>
+
+<div id="telaFinal" class="hidden">
+
+<h1>🔬 Parecer Final</h1>
+
+<p>
+Após todas as análises realizadas, Emily finalmente compreendeu algo que os dados já indicavam há muito tempo.
+</p>
+
+<br>
+
+<p>
+A ametista nunca foi apenas uma ametista.
+</p>
+
+<br>
+
+<p>
+Ela tinha um nome.
+</p>
+
+<br>
+
+<p>
+E Emily gostaria de continuar essa exploração.
+</p>
+
+<br>
+
+<button class="sim" onclick="abrirSpotify()">
+Continuar exploração ❤️
+</button>
+
+<button class="nao" onclick="indeferir()">
+Indeferir exploração ❌
+</button>
+
+<div id="mensagem"></div>
+
+<div id="reconsiderar" class="hidden">
+
+<br>
+
+<button class="sim" onclick="abrirSpotify()">
+Reconsiderar decisão ❤️
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<script>function abrirTela2(){
+
+document.getElementById("tela1")
+.classList.add("hidden");
+
+document.getElementById("tela2")
+.classList.remove("hidden");
+
+alert("Eba! Boa escolha. Vamos lá. ❤️");
+}
+
+function erroTela1(){
+
+document.getElementById("erro1").innerHTML = `
+<br>
+<strong>
+A exploração foi encerrada.
+
+<br><br>
+
+Infelizmente, algumas descobertas extraordinárias permanecem desconhecidas.
+
+<br><br>
+
+Tente novamente mais tarde.
+</strong>
+`;
+}
+
+function abrirTela3(){
+
+document.getElementById("tela2")
+.classList.add("hidden");
+
+document.getElementById("tela3")
+.classList.remove("hidden");
+}
+
+function abrirTelaFinal(){
+
+document.getElementById("tela3")
+.classList.add("hidden");
+
+document.getElementById("telaFinal")
+.classList.remove("hidden");
+}
+
+const fugitivo =
+document.getElementById("fugitivo");
+
+fugitivo.addEventListener("mouseover", function(){
+
+const x =
+Math.random() * (window.innerWidth - 150);
+
+const y =
+Math.random() * (window.innerHeight - 80);
+
+fugitivo.style.position = "fixed";
+fugitivo.style.left = x + "px";
+fugitivo.style.top = y + "px";
+
+});
+
+function abrirSpotify(){
+
+window.location.href =
+"https://open.spotify.com/playlist/1tC4cHSQRMrU5bQQ0p6nrz?si=9cIiaH3bTH2FzBHNtd37kA";
+}
+
+function indeferir(){
+
+document.getElementById("mensagem").innerHTML = `
+Esta decisão pode ser revista.
+
+<br><br>
+
+Afinal, o consensual é o novo sexy. 😌❤️
+`;
+
+document.getElementById("reconsiderar")
+.classList.remove("hidden");
+
+}
+
+</script>
+
+</body>
+</html>
