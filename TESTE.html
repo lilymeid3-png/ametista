@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Descoberta da Ametista 💜</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Segoe UI',sans-serif;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+
+background:
+linear-gradient(
+rgba(25,10,45,.65),
+rgba(25,10,45,.65)
+),
+url('ametista.jpg');
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+.card{
+background:rgba(255,255,255,.95);
+width:100%;
+max-width:850px;
+padding:40px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 20px 40px rgba(0,0,0,.3);
+}
+
+h1{
+color:#6d28d9;
+margin-bottom:20px;
+}
+
+p{
+font-size:1.1rem;
+line-height:1.9;
+color:#333;
+white-space:pre-line;
+text-align:left;
+}
+
+button{
+border:none;
+padding:14px 28px;
+margin:10px;
+border-radius:12px;
+cursor:pointer;
+font-size:1rem;
+transition:.2s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+.sim{
+background:#7c3aed;
+color:white;
+}
+
+.nao{
+background:#e5e5e5;
+}
+
+.hidden{
+display:none;
+}
+
+ul{
+text-align:left;
+max-width:500px;
+margin:20px auto;
+line-height:2;
+}
+
+#mensagem{
+margin-top:20px;
+color:#6d28d9;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<!-- TELA 1 -->
+<div id="tela1">
+
+<h1>📖 Relatório de Campo nº 01</h1>
+
+<p>Emy não estava procurando nada naquele dia, ou talvez estivesse procurando tudo ao mesmo tempo, como sempre acontecia quando o mundo parecia grande demais para caber dentro dela. Ela caminhava sem pressa, deixando os pensamentos escolherem o caminho, enquanto o chão respondia em silêncio, pedra após pedra, terra após terra. Até que algo quebrou a repetição do comum. Um brilho pequeno, quase tímido, mas insistente o suficiente para ser impossível ignorar. Emy parou. Se agachou devagar, como se tivesse medo de interromper o segredo do mundo, e estendeu a mão. O toque foi frio. Real. Diferente. Uma pedra roxa, profunda, como se tivesse guardado dentro de si um pedaço da noite. Ela ficou em silêncio por tempo demais para ser só curiosidade.
+
+E então levou consigo.
+
+Porque algumas coisas não pedem permissão para mudar o que somos.</p>
+
+<br>
+
+<button class="sim" onclick="abrirTela2()">Sim ❤️</button>
+<button class="nao" onclick="erroTela1()">Não ❌</button>
+
+<div id="erro1"></div>
+
+</div>
+
+<!-- TELA 2 -->
+<div id="tela2" class="hidden">
+
+<h1>💜 Análise Mineralógica</h1>
+
+<p>Emy tentou tratar aquilo como algo simples. Uma pedra. Um achado. Um acaso bonito. Mas não funcionava assim. Porque quanto mais ela olhava, mais a pedra parecia impossível de ignorar,
+como se existisse um tipo de presença ali que não cabia em explicações fáceis.
+
+Ela pesquisou.
+
+Leu nomes, descrições, classificações.
+
+E então encontrou: ametista. A palavra soou bonita demais para algo que tinha aparecido por acidente,
+como se o mundo tivesse escolhido um nome delicado para esconder algo muito maior. Mas mesmo assim… ainda não explicava.
+
+Porque o que ela tinha nas mãos não parecia apenas um mineral. Parecia significado. E Emy começou a perceber algo estranho. Talvez o problema nunca tivesse sido entender a pedra. Talvez fosse entender por que ela não conseguia parar de olhar.</p>
+
+<br>
+
+<button class="sim" onclick="abrirTela3()">Sim ❤️</button>
+<button class="nao" id="fugitivo">Não ❌</button>
+
+</div>
+
+<!-- TELA 3 -->
+<div id="tela3" class="hidden">
+
+<h1>📋 Conclusão da Pesquisa</h1>
+
+<p>Depois de tudo, Emy já não tentava mais encaixar aquilo em definições perfeitas.
+
+Ciência ajudava. Livros ajudavam. Palavras ajudavam.
+
+Mas nenhuma delas explicava o silêncio que vinha junto com aquela descoberta. A ametista continuava ali, simples e impossível ao mesmo tempo,
+como se fosse feita de algo que não pertencia totalmente ao mundo físico. E então veio a conclusão que não estava nos estudos.
+
+Algumas coisas não são encontradas. São reconhecidas. E naquele instante, Emy entendeu que não tinha apenas encontrado uma pedra rara. Tinha encontrado algo que mudava o jeito como ela olhava para tudo depois disso. E isso, de alguma forma, já era irreversível.</p>
+
+<br>
+
+<button class="sim" onclick="abrirTelaFinal()">Continuar ❤️</button>
+
+</div>
+
+<!-- TELA FINAL -->
+<div id="telaFinal" class="hidden">
+
+<h1>🔬 Parecer Final</h1>
+
+<p>Após todas as análises realizadas, Emily finalmente compreendeu algo que os dados já indicavam há muito tempo. A ametista nunca foi apenas uma ametista. Siginificado: 
+
+Gostaria de continuar?.</p>
+
+<br>
+
+<button class="sim" onclick="abrirSpotify()">Continuar exploração ❤️</button>
+<button class="nao" onclick="indeferir()">Indeferir exploração ❌</button>
+
+<div id="mensagem"></div>
+
+<div id="reconsiderar" class="hidden">
+<button class="sim" onclick="abrirSpotify()">Reconsiderar decisão ❤️</button>
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function abrirTela2(){
+document.getElementById("tela1").classList.add("hidden");
+document.getElementById("tela2").classList.remove("hidden");
+alert("Eba! Boa escolha. ❤️");
+}
+
+function erroTela1(){
+document.getElementById("erro1").innerHTML =
+"<br><strong>A exploração foi encerrada.<br><br>Algumas descobertas não voltam.</strong>";
+}
+
+function abrirTela3(){
+document.getElementById("tela2").classList.add("hidden");
+document.getElementById("tela3").classList.remove("hidden");
+}
+
+function abrirTelaFinal(){
+document.getElementById("tela3").classList.add("hidden");
+document.getElementById("telaFinal").classList.remove("hidden");
+}
+
+const fugitivo = document.getElementById("fugitivo");
+
+fugitivo.addEventListener("mouseover", function(){
+const x = Math.random() * (window.innerWidth - 150);
+const y = Math.random() * (window.innerHeight - 80);
+
+fugitivo.style.position = "fixed";
+fugitivo.style.left = x + "px";
+fugitivo.style.top = y + "px";
+});
+
+function abrirSpotify(){
+window.location.href = "https://open.spotify.com/playlist/1tC4cHSQRMrU5bQQ0p6nrz?si=9cIiaH3bTH2FzBHNtd37kA";
+}
+
+function indeferir(){
+document.getElementById("mensagem").innerHTML =
+"Esta decisão pode ser revista. Afinal, o consensual é sexy";
+
+document.getElementById("reconsiderar").classList.remove("hidden");
+}
+
+</script>
+
+</body>
+</html>
